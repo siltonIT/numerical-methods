@@ -39,10 +39,11 @@ class LDLTSolver():
         return L, D
 
 def main():
-    a = np.array([[4, 12, -16], [12, 37, -43], [-16, -43, 98]], float)
-    b = np.array([1, 3, 5], float)
-    
-    ldlt_solver = LDLTSolver(a, b)
+    # тест другой нужен
+    a = np.array([[2.31, 31.49, 1.52], [4.21, 22.42, 3.85], [3.49, 4.85, 28.72]], float)
+    b = np.array([40.95, 30.24, 42.81], float)
+
+    ldlt_solver = LDLTSolver(a, b) 
     ldlt_solver.print_equation_system()
 
     x = ldlt_solver.solve_equation_system()

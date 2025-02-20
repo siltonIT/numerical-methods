@@ -73,8 +73,8 @@ def estimate_relative_error(matrix: np.ndarray, roots: np.ndarray) -> np.floatin
     return np.linalg.norm(roots - new_roots) / np.linalg.norm(roots) 
 
 def main():
-    a = np.array([[2, 3, 1], [4, 7, 3], [6, 18, 5]], float)
-    b = np.array([1, 3, 5], float)
+    a = np.array([[2.31, 31.49, 1.52], [4.21, 22.42, 3.85], [3.49, 4.85, 28.72]], float)
+    b = np.array([40.95, 30.24, 42.81], float)
 
     gaussian_solver = GaussianSolver(a, b)
     gaussian_solver.print_equation_system()
