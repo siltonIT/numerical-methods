@@ -1,5 +1,6 @@
 #directory's
 venv/
+*/__pycache__
 
 #file's
 */info.txt
