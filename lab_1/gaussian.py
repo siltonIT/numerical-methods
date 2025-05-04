@@ -30,6 +30,8 @@ class GaussianSolver:
     def __find_pivot_element(self, index: int) -> None:
         """Находит ключевой элемент в матрице и меняет его местами с элементом в строке index."""
         key_index = index + np.argmax(self.matrix[index:, index])
+        if self.matrix[key_index][key_index] == 0:
+                raise ValueError("Ведущий равен нулю")
         
         if index != key_index:
             self.matrix[[key_index, index]] = self.matrix[[index, key_index]]
@@ -73,8 +75,8 @@ def estimate_relative_error(matrix: np.ndarray, roots: np.ndarray) -> np.floatin
     return np.linalg.norm(roots - new_roots) / np.linalg.norm(roots) 
 
 def main():
-    a = np.array([[2.31, 31.49, 1.52], [4.21, 22.42, 3.85], [3.49, 4.85, 28.72]], float)
-    b = np.array([40.95, 30.24, 42.81], float)
+    a = np.array([[6, 13, -17], [13, 29, -38], [-17, -38, 50]], float)
+    b = np.array([2, 4, -5], float)
 
     gaussian_solver = GaussianSolver(a, b)
     gaussian_solver.print_equation_system()
